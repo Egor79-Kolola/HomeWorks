@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Book {
-    Scanner cons = new Scanner(System.in);
+public class Book implements Serializable {
+    transient Scanner cons = new Scanner(System.in);
     String name;
     String autorName;
     String text;

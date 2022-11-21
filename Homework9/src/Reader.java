@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Reader {
-    Scanner cons = new Scanner(System.in);
+public class Reader implements Serializable {
+    transient Scanner cons = new Scanner(System.in);
     String family, name, surname, faculty, birthday, phfone;
     int numberCardReader;
     LinkedList<Book> booksList;
@@ -36,7 +37,7 @@ public class Reader {
     void takeBook(){
         if (booksList.size()<10){
         booksList.add(new Book());
-        System.out.println(family + name.charAt(0) + "." + surname.charAt(0) +". взял книгу: " + booksList.getLast());
+        System.out.println(family + name.charAt(0) + "." + surname.charAt(0) +". взял книгу: " + booksList.getLast().name);
         }else System.out.println("Читатель взял максмальное количество книг. Он должен вернуть хотя-бы одну");
 
     }
